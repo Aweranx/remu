@@ -11,7 +11,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     match machine.load_program(&args[1]) {
         Ok(()) => {
-            println!("entry: {:x}",machine.mmu.entry);
+            println!("host_alloc: {:x}",machine.mmu.host_alloc);
         }
         Err(e) => {
             eprintln!("Error loading program: {}", e);
